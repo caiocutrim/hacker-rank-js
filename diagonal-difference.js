@@ -1,7 +1,7 @@
 function diagonalDifference(matrixNums) {
   return Math.abs(
-    +leftSum(setLeftNums(setMatrixNums(matrixNums))) - 
-    +rightSum(setRightNums(setMatrixNums(matrixNums)))
+    +sumLeftDiagonal(setLeftNums(setMatrixNums(matrixNums))) - 
+    +sumRightDiagonal(setRightNums(setMatrixNums(matrixNums)))
   );
 }
 
@@ -17,11 +17,11 @@ function setRightNums(matrixNums) {
   return matrixNums.map((value, i, arr) => (arr[i][arr[i].length - i - 1]));
 }
 
-function leftSum(leftNums) {
+function sumLeftDiagonal(leftNums) {
   return leftNums.reduce((acc, num) => (acc + num ));
 }
 
-function rightSum(rightNums) {
+function sumRightDiagonal(rightNums) {
   return rightNums.reduce((acc, num) => (acc + num ));
 }
 
